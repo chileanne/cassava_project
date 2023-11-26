@@ -1,6 +1,10 @@
 
 
+import 'package:cassava_project/core/app_constants/app_constant.dart';
+import 'package:cassava_project/core/app_theme/app_colors.dart';
+import 'package:cassava_project/core/utils/image_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CreateAccountType extends StatefulWidget {
   const CreateAccountType({super.key});
@@ -10,6 +14,9 @@ class CreateAccountType extends StatefulWidget {
 }
 
 class _CreateAccountTypeState extends State<CreateAccountType> {
+
+
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -50,8 +57,46 @@ class _CreateAccountTypeState extends State<CreateAccountType> {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-         Spacer(),
+        Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 29.0,right: 29.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+
+              const SizedBox(height: 24,),
+
+              Image.asset(ImageUtils.imageeAssets(splashImage)),
+
+              const SizedBox(height: 30,),
+
+              Text("Create your Account",
+                style: theme.textTheme.titleLarge?.copyWith(
+                color: theme.colorScheme.onBackground
+              ),),
+
+              const SizedBox(height: 26,),
+
+
+              Text("What best describes you?",
+                style: theme.textTheme.titleLarge?.copyWith(
+                    color: AppColor.greyColor1,
+                  fontWeight: FontWeight.w700,
+                ),),
+
+                       // DropdownButtonFormField(
+                       //     items: dropdownItems,
+                       //     value: "",
+                       //     onChanged: (value){
+                       //
+                       //     })
+
+
+                        ],
+                      ),
+            )),
 
           Container(
             height: 50,
@@ -82,4 +127,15 @@ class _CreateAccountTypeState extends State<CreateAccountType> {
       ),
     );
   }
+
+
+  List<DropdownMenuItem<String>> get dropdownItems{
+    List<DropdownMenuItem<String>> menuItems = [
+      const DropdownMenuItem(value: "Customer", child: Text("Customer")),
+      const DropdownMenuItem(value: "Vendor", child: Text("Vendor")),
+
+    ];
+    return menuItems;
+  }
+
 }

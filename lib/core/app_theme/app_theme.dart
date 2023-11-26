@@ -10,6 +10,7 @@ class AppTheme{
     static final AppTextStyle textStyle =AppTextStyle.instance;
 
    static ThemeData lightTheme = ThemeData(
+     useMaterial3: true,
     fontFamily: "Roboto",
     brightness: Brightness.light,
     appBarTheme: AppBarTheme(
@@ -38,7 +39,7 @@ class AppTheme{
          error: AppColor.errorColor,
          onError:AppColor.errorColor,
          background: AppColor.whiteColor,
-         onBackground: AppColor.whiteColor,
+         onBackground: AppColor.blackColor,
          surface: AppColor.cardColor,
          onSurface: AppColor.cardColor
 
