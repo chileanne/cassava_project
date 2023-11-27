@@ -1,10 +1,13 @@
 
 
+import 'package:cassava_project/controllers/create_account_controller.dart';
 import 'package:cassava_project/core/app_constants/app_constant.dart';
 import 'package:cassava_project/core/app_theme/app_colors.dart';
 import 'package:cassava_project/core/utils/image_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 class CreateAccountType extends StatefulWidget {
   const CreateAccountType({super.key});
@@ -15,6 +18,7 @@ class CreateAccountType extends StatefulWidget {
 
 class _CreateAccountTypeState extends State<CreateAccountType> {
 
+  final CreateAccountController _createAccountController = Get.find();
 
 
   @override
@@ -86,12 +90,58 @@ class _CreateAccountTypeState extends State<CreateAccountType> {
                   fontWeight: FontWeight.w700,
                 ),),
 
-                       // DropdownButtonFormField(
-                       //     items: dropdownItems,
-                       //     value: "",
-                       //     onChanged: (value){
-                       //
-                       //     })
+
+                  const Gap(10),
+
+                       SizedBox(
+                         height: 58,
+                         child: DropdownButtonFormField(
+                           dropdownColor: AppColor.dropdownColor,
+                           style: theme.textTheme.titleMedium?.copyWith(
+                             color: AppColor.greyColor2
+                           ),
+                           isExpanded: true,
+                             elevation: 3,
+                             decoration: InputDecoration(
+                               enabledBorder: OutlineInputBorder(
+                                 borderRadius:BorderRadius.circular(5.0) ,
+                                 borderSide: BorderSide(color: theme.colorScheme.onPrimary),
+                                 gapPadding: 1.0
+                               ) ,
+
+                                // border:OutlineInputBorder(
+                                //     borderRadius:BorderRadius.circular(5.0) ,
+                                //     borderSide: BorderSide(color: theme.colorScheme.onPrimary),
+                                //     gapPadding: 3.0
+                                // ),
+
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius:BorderRadius.circular(5.0) ,
+                                    borderSide: BorderSide(color: theme.colorScheme.error),
+                                    gapPadding: 3.0
+                                ),
+
+                                focusedBorder:OutlineInputBorder(
+                                    borderRadius:BorderRadius.circular(5.0) ,
+                                    borderSide: BorderSide(color: theme.colorScheme.onPrimary),
+                                    gapPadding: 2.0
+                                ) ,
+
+
+                                focusedErrorBorder:OutlineInputBorder(
+                                    borderRadius:BorderRadius.circular(5.0) ,
+                                    borderSide: BorderSide(color: theme.colorScheme.error),
+                                    gapPadding: 3.0
+                                ),
+                             ),
+                             items: _createAccountController.dropdownItems,
+                             value: _createAccountController.selectedValue.value,
+                             onChanged: (value){
+
+                             },
+
+                         ),
+                       )
 
 
                         ],
@@ -129,13 +179,5 @@ class _CreateAccountTypeState extends State<CreateAccountType> {
   }
 
 
-  List<DropdownMenuItem<String>> get dropdownItems{
-    List<DropdownMenuItem<String>> menuItems = [
-      const DropdownMenuItem(value: "Customer", child: Text("Customer")),
-      const DropdownMenuItem(value: "Vendor", child: Text("Vendor")),
-
-    ];
-    return menuItems;
-  }
 
 }

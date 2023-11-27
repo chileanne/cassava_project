@@ -13,6 +13,7 @@ class AppColor{
     static Color greyColor2 = const Color(0XFF9D9D9D);
     static Color errorColor = const Color(0XFFE94141);
     static Color cardColor = const Color (0XFFF7F7F7);
+    static Color dropdownColor = const Color (0XFFF4F4F4);
 
     
 
