@@ -3,6 +3,7 @@
 import 'package:cassava_project/controllers/create_account_controller.dart';
 import 'package:cassava_project/core/app_constants/app_constant.dart';
 import 'package:cassava_project/core/app_theme/app_colors.dart';
+import 'package:cassava_project/core/shared_widgets/drop_down_form_field.dart';
 import 'package:cassava_project/core/utils/image_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -93,55 +94,13 @@ class _CreateAccountTypeState extends State<CreateAccountType> {
 
                   const Gap(10),
 
-                       SizedBox(
-                         height: 58,
-                         child: DropdownButtonFormField(
-                           dropdownColor: AppColor.dropdownColor,
-                           style: theme.textTheme.titleMedium?.copyWith(
-                             color: AppColor.greyColor2
-                           ),
-                           isExpanded: true,
-                             elevation: 3,
-                             decoration: InputDecoration(
-                               enabledBorder: OutlineInputBorder(
-                                 borderRadius:BorderRadius.circular(5.0) ,
-                                 borderSide: BorderSide(color: theme.colorScheme.onPrimary),
-                                 gapPadding: 1.0
-                               ) ,
-
-                                // border:OutlineInputBorder(
-                                //     borderRadius:BorderRadius.circular(5.0) ,
-                                //     borderSide: BorderSide(color: theme.colorScheme.onPrimary),
-                                //     gapPadding: 3.0
-                                // ),
-
-                                errorBorder: OutlineInputBorder(
-                                    borderRadius:BorderRadius.circular(5.0) ,
-                                    borderSide: BorderSide(color: theme.colorScheme.error),
-                                    gapPadding: 3.0
-                                ),
-
-                                focusedBorder:OutlineInputBorder(
-                                    borderRadius:BorderRadius.circular(5.0) ,
-                                    borderSide: BorderSide(color: theme.colorScheme.onPrimary),
-                                    gapPadding: 2.0
-                                ) ,
-
-
-                                focusedErrorBorder:OutlineInputBorder(
-                                    borderRadius:BorderRadius.circular(5.0) ,
-                                    borderSide: BorderSide(color: theme.colorScheme.error),
-                                    gapPadding: 3.0
-                                ),
-                             ),
-                             items: _createAccountController.dropdownItems,
-                             value: _createAccountController.selectedValue.value,
-                             onChanged: (value){
-
-                             },
-
-                         ),
-                       )
+                     DropDownFormFileds(
+                       items: _createAccountController.dropdownItems,
+                       value: _createAccountController.selectedValue.value,
+                       onChanged: (v){
+                         _createAccountController.selectedValue.value=v;
+                       },
+                     )
 
 
                         ],
