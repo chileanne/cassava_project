@@ -2,6 +2,9 @@
 const String haveAccountText="Already have an account?";
 const String  signInText="Sign In";
 const String nextText ="Next";
+const String signUpText ="SignUp";
+const String createAccountText ="Create your Account";
+const String vendorAccountText ="Vendor's Account";
 
 
 

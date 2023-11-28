@@ -8,12 +8,14 @@ class SharedTextFormFields extends StatelessWidget {
   final TextInputType keyboardType;
   final TextEditingController controller;
   final String hintText;
+  final bool hideText;
+  final Widget suffixIcon;
 
   const SharedTextFormFields(
       {super.key,
 
         required this.keyboardType,
-        required this.controller, required  this.validators, required this.hintText,
+        required this.controller, required  this.validators, required this.hintText,this.hideText=false, this.suffixIcon=const SizedBox()
       });
 
   @override
@@ -26,7 +28,9 @@ class SharedTextFormFields extends StatelessWidget {
         style:theme.textTheme.titleSmall ,
         validator: validators,
         keyboardType:keyboardType ,
+        obscureText:hideText ,
         decoration: InputDecoration(
+          suffixIcon:suffixIcon,
           isDense: true,
           hintText: hintText,
           hintStyle: theme.textTheme.titleSmall?.copyWith(

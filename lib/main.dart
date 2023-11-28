@@ -1,5 +1,7 @@
 import 'package:cassava_project/core/app_theme/app_theme.dart';
 import 'package:cassava_project/presentation/screens/Authentication/create_accounty_type/bindings/create_account_binding.dart';
+import 'package:cassava_project/presentation/screens/Authentication/signup/vendor_account/create_vendor_account_screen.dart';
+import 'package:cassava_project/presentation/screens/Authentication/signup/vendor_account/create_vendor_password_screen.dart';
 import 'package:cassava_project/presentation/screens/Authentication/signup/vendor_account/vendor_account_type_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Cassava',
       theme: AppTheme.lightTheme,
-      home: const VendorAccountTypeScreen(),
+      home: const CreateVendorPasswordScreen(),
       initialBinding: CreateAccountBindings(),
     );
   }
