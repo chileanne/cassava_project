@@ -1,5 +1,6 @@
 
 
+import 'package:cassava_project/core/constants/app_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -20,52 +21,57 @@ class DropDownFormFileds extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return   SizedBox(
-      height: 58,
-      child: DropdownButtonFormField(
-        dropdownColor: AppColor.dropdownColor,
-        style: theme.textTheme.titleMedium?.copyWith(
-            color: AppColor.greyColor2
-        ),
-        isExpanded: true,
-        elevation: 3,
-        decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-              borderRadius:BorderRadius.circular(5.0) ,
-              borderSide: BorderSide(color: theme.colorScheme.onPrimary),
-              gapPadding: 1.0
-          ) ,
+    return   DropdownButtonFormField(
+      validator: (String? value){
+        if(value!.isEmpty){
+          return empty;
+        }
 
-          // border:OutlineInputBorder(
-          //     borderRadius:BorderRadius.circular(5.0) ,
-          //     borderSide: BorderSide(color: theme.colorScheme.onPrimary),
-          //     gapPadding: 3.0
-          // ),
-
-          errorBorder: OutlineInputBorder(
-              borderRadius:BorderRadius.circular(5.0) ,
-              borderSide: BorderSide(color: theme.colorScheme.error),
-              gapPadding: 3.0
-          ),
-
-          focusedBorder:OutlineInputBorder(
-              borderRadius:BorderRadius.circular(5.0) ,
-              borderSide: BorderSide(color: theme.colorScheme.onPrimary),
-              gapPadding: 2.0
-          ) ,
-
-
-          focusedErrorBorder:OutlineInputBorder(
-              borderRadius:BorderRadius.circular(5.0) ,
-              borderSide: BorderSide(color: theme.colorScheme.error),
-              gapPadding: 3.0
-          ),
-        ),
-        items: items,
-        value: value,
-        onChanged: onChanged
-
+        return null;
+      },
+      dropdownColor: AppColor.dropdownColor,
+      style: theme.textTheme.titleMedium?.copyWith(
+          color: AppColor.greyColor2
       ),
+      isExpanded: true,
+      elevation: 3,
+      decoration: InputDecoration(
+        isDense: true,
+        enabledBorder: OutlineInputBorder(
+            borderRadius:BorderRadius.circular(5.0) ,
+            borderSide: BorderSide(color: theme.colorScheme.onPrimary),
+            gapPadding: 1.0
+        ) ,
+
+        // border:OutlineInputBorder(
+        //     borderRadius:BorderRadius.circular(5.0) ,
+        //     borderSide: BorderSide(color: theme.colorScheme.onPrimary),
+        //     gapPadding: 3.0
+        // ),
+
+        errorBorder: OutlineInputBorder(
+            borderRadius:BorderRadius.circular(5.0) ,
+            borderSide: BorderSide(color: theme.colorScheme.error),
+            gapPadding: 3.0
+        ),
+
+        focusedBorder:OutlineInputBorder(
+            borderRadius:BorderRadius.circular(5.0) ,
+            borderSide: BorderSide(color: theme.colorScheme.onPrimary),
+            gapPadding: 2.0
+        ) ,
+
+
+        focusedErrorBorder:OutlineInputBorder(
+            borderRadius:BorderRadius.circular(5.0) ,
+            borderSide: BorderSide(color: theme.colorScheme.error),
+            gapPadding: 3.0
+        ),
+      ),
+      items: items,
+      value: value,
+      onChanged: onChanged
+
     );
   }
 }

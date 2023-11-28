@@ -1,6 +1,6 @@
 
 
-import 'package:cassava_project/controllers/create_account_controller.dart';
+
 import 'package:cassava_project/core/app_theme/app_colors.dart';
 import 'package:cassava_project/core/shared_widgets/app_Bar_widgets.dart';
 import 'package:cassava_project/core/shared_widgets/auth_bottom_navigation_widget.dart';
@@ -11,7 +11,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constants/app_constant.dart';
+import '../../../../core/constants/app_constant.dart';
+import '../../../controllers/create_account_controller.dart';
+
+
 
 class CreateAccountType extends StatefulWidget {
   const CreateAccountType({super.key});

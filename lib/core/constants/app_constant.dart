@@ -1,4 +1,7 @@
-
+///app strings
+const String haveAccountText="Already have an account?";
+const String  signInText="Sign In";
+const String nextText ="Next";
 
 
 

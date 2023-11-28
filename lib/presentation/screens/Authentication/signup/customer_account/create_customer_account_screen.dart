@@ -1,15 +1,18 @@
-import 'package:cassava_project/controllers/create_customer_account_controller.dart';
+
 import 'package:cassava_project/core/shared_widgets/app_Bar_widgets.dart';
 import 'package:cassava_project/core/shared_widgets/auth_bottom_navigation_widget.dart';
+import 'package:cassava_project/core/utils/image_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../../../../core/constants/app_constant.dart';
+import '../../../../../core/shared_widgets/text_form_fields.dart';
+import '../../../../controllers/create_customer_account_controller.dart';
 
-import '../../../../core/constants/app_constant.dart';
-import '../../../../core/shared_widgets/text_form_fields.dart';
-import '../../../../core/utils/image_utils.dart';
+
+
 
 class CreateCustomerAccount extends StatefulWidget {
   const CreateCustomerAccount({super.key});

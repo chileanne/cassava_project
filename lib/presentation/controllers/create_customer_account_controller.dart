@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
-import '../core/constants/app_constant.dart';
+import '../../core/constants/app_constant.dart';
+
+
 
 class CreateCustomerAccountController extends GetxController {
 
@@ -19,7 +21,7 @@ class CreateCustomerAccountController extends GetxController {
 
   submit(){
     if(customerAccountFormKey.currentState!.validate()){
-
+         ///go to next page
     }
   }
 
