@@ -11,7 +11,7 @@ class AppTheme{
 
    static ThemeData lightTheme = ThemeData(
      useMaterial3: true,
-    fontFamily: "Roboto",
+    fontFamily: "Inter",
     brightness: Brightness.light,
     appBarTheme: AppBarTheme(
       centerTitle: true,

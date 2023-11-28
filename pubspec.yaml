@@ -81,19 +81,19 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: Roboto
+     - family: Inter
        fonts:
-         - asset: fonts/Roboto-Thin.ttf
+         - asset: fonts/Inter-Thin.ttf
            weight: 100
-         - asset: fonts/Roboto-Light.ttf
+         - asset: fonts/Inter-Light.ttf
            weight: 300
-         - asset: fonts/Roboto-Regular.ttf
+         - asset: fonts/Inter-Regular.ttf
            weight: 400
-         - asset: fonts/Roboto-Medium.ttf
+         - asset: fonts/Inter-Medium.ttf
            weight: 500
-         - asset: fonts/Roboto-Bold.ttf
+         - asset: fonts/Inter-Bold.ttf
            weight: 700
-         - asset: fonts/Roboto-Black.ttf
+         - asset: fonts/Inter-Black.ttf
            weight: 900
   #   - family: Trajan Pro
   #     fonts:
