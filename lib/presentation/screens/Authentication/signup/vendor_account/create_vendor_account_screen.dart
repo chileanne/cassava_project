@@ -2,12 +2,13 @@
 import 'package:cassava_project/core/shared_widgets/app_Bar_widgets.dart';
 import 'package:cassava_project/core/shared_widgets/auth_bottom_navigation_widget.dart';
 import 'package:cassava_project/core/utils/image_utils.dart';
-import 'package:cassava_project/presentation/controllers/create_business_account_controller.dart';
+import 'package:cassava_project/presentation/controllers/create_vendor_account_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../../../../core/app_routes/app_routes.dart';
 import '../../../../../core/constants/app_constant.dart';
 import '../../../../../core/shared_widgets/text_form_fields.dart';
 import '../../../../controllers/create_customer_account_controller.dart';
@@ -23,7 +24,7 @@ class CreateVendorAccountScreen extends StatefulWidget {
 }
 
 class _CreateVendorAccountScreenState extends State<CreateVendorAccountScreen> {
-  final CreateBusinessAccountController businessController =Get.find();
+  final CreateVendorAccountController businessController =Get.find();
 
 
   @override
@@ -35,6 +36,7 @@ class _CreateVendorAccountScreenState extends State<CreateVendorAccountScreen> {
       ShareAuthBottomNavigationWidget(
           leftText:"",
           rightText: "",
+          rightTextOnPressed:(){},
           title: nextText,
           onPressed: () {
             businessController.createVendor();

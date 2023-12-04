@@ -6,9 +6,10 @@ class ShareAuthBottomNavigationWidget extends StatelessWidget {
   final String title;
   final String leftText;
   final String rightText;
-  final Null Function() onPressed;
+  final Function() onPressed;
+  final  Function() rightTextOnPressed;
 
-  const ShareAuthBottomNavigationWidget({super.key,required this.title, required this.onPressed, required this.leftText, required this.rightText});
+  const ShareAuthBottomNavigationWidget({super.key,required this.title, required this.onPressed, required this.leftText, required this.rightText, required this.rightTextOnPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +40,14 @@ class ShareAuthBottomNavigationWidget extends StatelessWidget {
                         color: theme.colorScheme.primary
                     ),),
                   const Gap(4),
-                  Text(rightText,
-                    style: theme.textTheme.titleSmall?.copyWith(
-                        fontWeight: FontWeight.w700,
-                        color: theme.colorScheme.primary
-                    ),),
+                  GestureDetector(
+                    onTap: rightTextOnPressed,
+                    child: Text(rightText,
+                      style: theme.textTheme.titleSmall?.copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: theme.colorScheme.primary
+                      ),),
+                  ),
 
                 ],
               ),

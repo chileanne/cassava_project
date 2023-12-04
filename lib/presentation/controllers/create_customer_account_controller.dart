@@ -1,3 +1,4 @@
+import 'package:cassava_project/core/app_routes/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
@@ -21,7 +22,9 @@ class CreateCustomerAccountController extends GetxController {
 
   submit(){
     if(customerAccountFormKey.currentState!.validate()){
-         ///go to next page
+         ///go to sign in page
+
+         Get.toNamed(AppRoutes.signIn);
     }
   }
 
@@ -85,7 +88,7 @@ class CreateCustomerAccountController extends GetxController {
 
         return passwordLessThanSixText;
 
-      }else if(value.contains(password.text.toString())){
+      }else if(!value.contains(password.text.toString())){
           return "password does not match";
     }else{
         return null;

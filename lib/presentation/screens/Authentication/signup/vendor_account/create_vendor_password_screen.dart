@@ -10,7 +10,7 @@ import '../../../../../core/shared_widgets/app_Bar_widgets.dart';
 import '../../../../../core/shared_widgets/auth_bottom_navigation_widget.dart';
 import '../../../../../core/shared_widgets/text_form_fields.dart';
 import '../../../../../core/utils/image_utils.dart';
-import '../../../../controllers/create_business_account_controller.dart';
+import '../../../../controllers/create_vendor_account_controller.dart';
 
 class CreateVendorPasswordScreen extends StatefulWidget {
   const CreateVendorPasswordScreen({super.key});
@@ -20,7 +20,7 @@ class CreateVendorPasswordScreen extends StatefulWidget {
 }
 
 class _CreateVendorPasswordScreenState extends State<CreateVendorPasswordScreen> {
-  final CreateBusinessAccountController businessController =Get.find();
+  final CreateVendorAccountController businessController =Get.find();
 
 
   @override
@@ -32,6 +32,7 @@ class _CreateVendorPasswordScreenState extends State<CreateVendorPasswordScreen>
       ShareAuthBottomNavigationWidget(
           leftText:"",
           rightText: "",
+          rightTextOnPressed:(){},
           title: signUpText,
           onPressed: () {
             businessController.createVendorPassword();

@@ -7,6 +7,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../../../../core/app_routes/app_routes.dart';
 import '../../../../../core/constants/app_constant.dart';
 import '../../../../../core/shared_widgets/text_form_fields.dart';
 import '../../../../controllers/create_customer_account_controller.dart';
@@ -32,9 +33,12 @@ class _CreateCustomerAccountState extends State<CreateCustomerAccount> {
       appBar: const SharedAppBars(),
       bottomNavigationBar:
           ShareAuthBottomNavigationWidget(
-              leftText: "Already have an account?",
-              rightText: "Sign In",
-              title: "Sign Up",
+              leftText: haveAccountText,
+              rightText:signInText,
+              title:signUpText,
+              rightTextOnPressed:(){
+                Get.toNamed(AppRoutes.signIn);
+              },
               onPressed: () {
                 customerController.submit();
               }),

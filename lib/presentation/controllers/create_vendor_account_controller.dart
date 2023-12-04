@@ -1,12 +1,13 @@
 
 
+import 'package:cassava_project/core/app_routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/constants/app_constant.dart';
 import '../../core/shared_widgets/drop_down_form_field.dart';
 
-class CreateBusinessAccountController extends GetxController{
+class CreateVendorAccountController extends GetxController{
 
   final GlobalKey<FormState> vendorTypeFormKey = GlobalKey<FormState>();
   final GlobalKey<FormState> createVendorFormKey = GlobalKey<FormState>();
@@ -42,7 +43,8 @@ class CreateBusinessAccountController extends GetxController{
   submit(){
 
     if(vendorTypeFormKey.currentState!.validate()){
-      ///go to
+      ///go to create vendor account
+      Get.toNamed(AppRoutes.createVendorAccount);
     }
 
   }
@@ -51,7 +53,8 @@ class CreateBusinessAccountController extends GetxController{
   createVendor(){
 
     if(createVendorFormKey.currentState!.validate()){
-      ///go to
+      ///go to create vendor password
+      Get.toNamed(AppRoutes.createVendorPassword);
     }
 
   }
@@ -60,7 +63,7 @@ class CreateBusinessAccountController extends GetxController{
   createVendorPassword(){
 
     if(createVendorPasswordFormKey.currentState!.validate()){
-      ///go to
+      ///go to dashboard
     }
 
   }

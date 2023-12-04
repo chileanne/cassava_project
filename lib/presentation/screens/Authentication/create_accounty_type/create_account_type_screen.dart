@@ -1,6 +1,7 @@
 
 
 
+import 'package:cassava_project/core/app_routes/app_routes.dart';
 import 'package:cassava_project/core/app_theme/app_colors.dart';
 import 'package:cassava_project/core/shared_widgets/app_Bar_widgets.dart';
 import 'package:cassava_project/core/shared_widgets/auth_bottom_navigation_widget.dart';
@@ -12,7 +13,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/constants/app_constant.dart';
-import '../../../controllers/create_account_controller.dart';
+import '../../../controllers/create_account_type_controller.dart';
 
 
 
@@ -25,7 +26,7 @@ class CreateAccountType extends StatefulWidget {
 
 class _CreateAccountTypeState extends State<CreateAccountType> {
 
-  final CreateAccountController _createAccountController = Get.find();
+  final CreateAccountTypeController _createAccountController = Get.find();
 
 
   @override
@@ -36,11 +37,14 @@ class _CreateAccountTypeState extends State<CreateAccountType> {
       resizeToAvoidBottomInset: true,
       appBar: const SharedAppBars() ,
       bottomNavigationBar: ShareAuthBottomNavigationWidget(
-          leftText:"Already have an account?",
-          rightText:"Sign In",
-          title: "Next",
+          leftText:haveAccountText,
+          rightText:signInText,
+          rightTextOnPressed:(){
+             Get.toNamed(AppRoutes.signIn);
+          },
+          title: nextText,
           onPressed:(){
-
+                 _createAccountController.submit();
           }),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,44 +52,47 @@ class _CreateAccountTypeState extends State<CreateAccountType> {
         Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 29.0,right: 29.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+              child: Form(
+                key: _createAccountController.accountForm,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
 
-              const SizedBox(height: 24,),
+                const SizedBox(height: 24,),
 
-              Image.asset(ImageUtils.imageeAssets(splashImage)),
+                Image.asset(ImageUtils.imageeAssets(splashImage)),
 
-              const SizedBox(height: 30,),
+                const SizedBox(height: 30,),
 
-              Text("Create your Account",
-                style: theme.textTheme.titleLarge?.copyWith(
-                color: theme.colorScheme.onBackground
-              ),),
-
-              const SizedBox(height: 26,),
-
-
-              Text("What best describes you?",
-                style: theme.textTheme.titleLarge?.copyWith(
-                    color: AppColor.greyColor1,
-                  fontWeight: FontWeight.w700,
+                Text("Create your Account",
+                  style: theme.textTheme.titleLarge?.copyWith(
+                  color: theme.colorScheme.onBackground
                 ),),
 
-
-                  const Gap(10),
-
-                     DropDownFormFileds(
-                       items: _createAccountController.dropdownItems,
-                       value: _createAccountController.selectedValue.value,
-                       onChanged: (v){
-                         _createAccountController.selectedValue.value=v;
-                       },
-                     )
+                const SizedBox(height: 26,),
 
 
-                        ],
-                      ),
+                Text("What best describes you?",
+                  style: theme.textTheme.titleLarge?.copyWith(
+                      color: AppColor.greyColor1,
+                    fontWeight: FontWeight.w700,
+                  ),),
+
+
+                    const Gap(10),
+
+                       DropDownFormFileds(
+                         items: _createAccountController.dropdownItems,
+                         value: _createAccountController.selectedValue.value,
+                         onChanged: (v){
+                           _createAccountController.selectedValue.value=v;
+                         },
+                       )
+
+
+                          ],
+                        ),
+              ),
             )
 
         ),

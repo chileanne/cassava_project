@@ -5,6 +5,8 @@ const String nextText ="Next";
 const String signUpText ="SignUp";
 const String createAccountText ="Create your Account";
 const String vendorAccountText ="Vendor's Account";
+const String notHaveAccountText ="Don’t have an account?";
+const String  forgotPasswordText = "Forgot Password";
 
 
 
