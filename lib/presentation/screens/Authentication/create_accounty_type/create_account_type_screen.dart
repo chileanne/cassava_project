@@ -60,7 +60,7 @@ class _CreateAccountTypeState extends State<CreateAccountType> {
 
                 const SizedBox(height: 24,),
 
-                Image.asset(ImageUtils.imageeAssets(splashImage)),
+                Image.asset(ImageUtils.imageeAssets(splashImageIM)),
 
                 const SizedBox(height: 30,),
 

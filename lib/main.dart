@@ -29,8 +29,10 @@ class MyApp extends StatelessWidget {
       title: 'Cassava',
       theme: AppTheme.lightTheme,
       getPages: AppPages.list,
-      initialRoute: AppRoutes.createAccountType,
-     // initialBinding: CreateAccountBindings(),
+      //initialRoute: AppRoutes.createAccountType,
+
+
+      initialRoute: AppRoutes.dashboard,
     );
   }
 }

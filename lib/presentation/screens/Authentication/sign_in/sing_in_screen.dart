@@ -52,7 +52,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 const Gap(
                   24,
                 ),
-                Image.asset(ImageUtils.imageeAssets(splashImage)),
+                Image.asset(ImageUtils.imageeAssets(splashImageIM)),
                 const SizedBox(
                   height: 30,
                 ),
