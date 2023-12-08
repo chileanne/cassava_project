@@ -9,7 +9,12 @@ import 'package:cassava_project/presentation/screens/Authentication/signup/vendo
 import 'package:cassava_project/presentation/screens/Authentication/signup/vendor_account/create_vendor_password_screen.dart';
 import 'package:cassava_project/presentation/screens/Authentication/signup/vendor_account/vendor_account_type_screen.dart';
 import 'package:cassava_project/presentation/screens/dashboard/dashboard_screen.dart';
+import 'package:cassava_project/presentation/screens/new_card/new_card_screen.dart';
 import 'package:cassava_project/presentation/screens/purchase/purchase_screen.dart';
+import 'package:cassava_project/presentation/screens/purchase_checkout/purchase_checkout.dart';
+import 'package:cassava_project/presentation/screens/purchase_checkout/sub_screens/delivery_purchase_screen.dart';
+import 'package:cassava_project/presentation/screens/purchase_checkout/sub_screens/payment_purchase_screen.dart';
+import 'package:cassava_project/presentation/screens/purchase_checkout/sub_screens/summary_purchase_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
@@ -95,6 +100,49 @@ class AppPages {
      transition: Transition.fadeIn,
      transitionDuration: transitionDuration,
    ),
+
+
+   GetPage(
+     name: AppRoutes.purchaseCheckOut,
+     page: () => const PurchaseCheckout(),
+     transition: Transition.fadeIn,
+     transitionDuration: transitionDuration,
+   ),
+
+
+   GetPage(
+     name: AppRoutes.deliveryPurchaseScreen,
+     page: () => const DeliveryPurchaseScreen(),
+     transition: Transition.fadeIn,
+     transitionDuration: transitionDuration,
+   ),
+
+
+   GetPage(
+     name: AppRoutes.paymentPurchaseScreen,
+     page: () => const PaymentPurchaseScreen(),
+     transition: Transition.fadeIn,
+     transitionDuration: transitionDuration,
+   ),
+
+
+
+   GetPage(
+     name: AppRoutes.summaryPurchaseScreen,
+     page: () => const SummaryPurchaseScreen(),
+     transition: Transition.fadeIn,
+     transitionDuration: transitionDuration,
+   ),
+
+
+   GetPage(
+     name: AppRoutes.newCardScreen,
+     page: () => const NewCardScreen(),
+     transition: Transition.fadeIn,
+     transitionDuration: transitionDuration,
+   ),
+
+
 
  ];
 

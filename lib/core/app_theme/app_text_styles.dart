@@ -30,6 +30,13 @@ class AppTextStyle{
   );
 
 
+  TextStyle bodySmall= TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w700,
+    color:AppColor.greyColor1,
+  );
+
+
 
 
 }

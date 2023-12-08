@@ -10,12 +10,13 @@ class SharedTextFormFields extends StatelessWidget {
   final String hintText;
   final bool hideText;
   final Widget suffixIcon;
+  final readOnly;
 
   const SharedTextFormFields(
       {super.key,
 
         required this.keyboardType,
-        required this.controller, required  this.validators, required this.hintText,this.hideText=false, this.suffixIcon=const SizedBox()
+        required this.controller, required  this.validators, required this.hintText,this.hideText=false, this.suffixIcon=const SizedBox(), this.readOnly=false
       });
 
   @override
@@ -24,6 +25,7 @@ class SharedTextFormFields extends StatelessWidget {
     return  Padding(
       padding: const EdgeInsets.all(4.0),
       child: TextFormField(
+        readOnly:readOnly ,
         controller:controller ,
         style:theme.textTheme.titleSmall ,
         validator: validators,

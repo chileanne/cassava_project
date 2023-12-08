@@ -22,13 +22,15 @@ class AppTheme{
         shape:RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.0)
         ),
-        foregroundColor: AppColor.lightGreenColor
+        foregroundColor: AppColor.lightGreenColor,
+        backgroundColor: AppColor.lightGreenColor,
       ) ,
     ) ,
     textTheme: TextTheme(
       titleLarge: textStyle.titleLarge,
       titleMedium: textStyle.titleMedium,
-      titleSmall: textStyle.titleSmall
+      titleSmall: textStyle.titleSmall,
+      bodySmall: textStyle.bodySmall,
     ),
      colorScheme: ColorScheme(
          brightness: Brightness.light,

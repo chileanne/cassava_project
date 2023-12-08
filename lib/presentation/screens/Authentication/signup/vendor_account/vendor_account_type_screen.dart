@@ -82,7 +82,7 @@ class _VendorAccountTypeScreenState extends State<VendorAccountTypeScreen> {
 
                       const Gap(10),
 
-                      DropDownFormFileds(
+                      SharedDropDownFormFileds(
                         items: businessAccountController.dropdownItems,
                         value: businessAccountController.selectedValue.value,
                         onChanged: (v){

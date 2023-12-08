@@ -18,6 +18,10 @@ class AppColor{
     static Color dropdownColor = const Color (0XFFF4F4F4);
     static Color darkGreyColor =const Color(0XFF404040);
    static Color greyColor3= const Color(0XFFF6F5F2);
+   static Color yellow =const Color(0XFFEF991B);
+
+
+
 
     
 

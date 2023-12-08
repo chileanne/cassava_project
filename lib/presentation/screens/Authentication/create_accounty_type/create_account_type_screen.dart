@@ -81,7 +81,7 @@ class _CreateAccountTypeState extends State<CreateAccountType> {
 
                     const Gap(10),
 
-                       DropDownFormFileds(
+                       SharedDropDownFormFileds(
                          items: _createAccountController.dropdownItems,
                          value: _createAccountController.selectedValue.value,
                          onChanged: (v){

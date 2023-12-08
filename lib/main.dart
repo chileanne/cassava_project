@@ -28,11 +28,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Cassava',
       theme: AppTheme.lightTheme,
+      initialBinding: AppBindings(),
       getPages: AppPages.list,
       //initialRoute: AppRoutes.createAccountType,
 
 
-      initialRoute: AppRoutes.dashboard,
+      initialRoute: AppRoutes.newCardScreen,
     );
   }
 }
